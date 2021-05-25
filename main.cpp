@@ -66,7 +66,7 @@ int main()
         dir = char(((i + 1) / 100) + '0');              //100の位
         dir += char((((i + 1) % 100) / 10) + '0');      //10の位
         dir += char((((i + 1) % 100) % 10) + '0');      //1の位
-        dir = "./data/city012/city012_" + dir + ".txt"; //ディレクトリを代入
+        dir = "./data/city021/city021_" + dir + ".txt"; //ディレクトリを代入
 
         std::ifstream input_file(dir);
         if (input_file.fail()) //ファイル読み込みに失敗
@@ -89,7 +89,7 @@ int main()
     }
 
     //認識
-    for (int x = 0; x < 56; x++)
+    for (int x = 0; x < 100; x++)
     { //入力データのfor
         for (int y = 0; y < 100; y++)
         { //テンプレートのfor
@@ -99,33 +99,34 @@ int main()
 
                 for (int j = 0; j < input_frame[x]; j++)
                 {
-                    double sum;
-                    sum = 0.0;
+                    double sum = 0.0;
+
                     //次元の差の2乗和を合計を格納
                     for (int k = 0; k < 15; k++) //次元の差の2乗和を合計する
-                        sum += pow((temp_data[i][k] - input_data[j][k]), 2.0);
+                        sum += pow((temp_data[i][k][y] - input_data[j][k][x]), 2.0);
 
+                    double local_dist = sqrt(sum);
                     if (i == 0 && j == 0) //最初はそのまま代入
-                        cumulative_dist[i][j] = sqrt(sum);
+                        cumulative_dist[i][j] = local_dist;
 
                     else if (i == 0) //端は例外処理
-                        cumulative_dist[0][j] = cumulative_dist[0][j - 1] + sqrt(sum);
+                        cumulative_dist[0][j] = cumulative_dist[0][j - 1] + local_dist;
 
                     else if (j == 0)
-                        cumulative_dist[i][0] = cumulative_dist[i - 1][0] + sqrt(sum);
+                        cumulative_dist[i][0] = cumulative_dist[i - 1][0] + local_dist;
 
                     else
-                    { //累積距離を計算
+                    { //累積距離を上左斜めそれぞれ計算
                         double up, left, dia, local_min;
-                        up = cumulative_dist[i - 1][j] + sqrt(sum);            //上方向の累積
-                        left = cumulative_dist[i][j - 1] + sqrt(sum);          //左方向の累積
-                        dia = cumulative_dist[i - 1][j - 1] + 2.0 * sqrt(sum); //斜め方向の累積
+                        up = cumulative_dist[i - 1][j] + local_dist;            //上方向の累積
+                        left = cumulative_dist[i][j - 1] + local_dist;          //左方向の累積
+                        dia = cumulative_dist[i - 1][j - 1] + 2.0 * local_dist; //斜め方向の累積
 
                         local_min = up;       //上方向を最小値に設定
                         if (left < local_min) //左方向と大小比較
-                            left = local_min;
+                            local_min = left;
                         if (dia < local_min) //斜め方向と大小比較
-                            dia = local_min;
+                            local_min = dia;
 
                         cumulative_dist[i][j] = local_min; //最小値を累積距離に代入
                     }
@@ -135,17 +136,25 @@ int main()
             double reco;
             reco = cumulative_dist[temp_frame[y] - 1][input_frame[x] - 1] / double(input_frame[x] + temp_frame[y]);
 
-            if (reco < cumulative_sum[x] || y==0) //最小の累積距離を更新, 1回目はそのまま代入
+            if (reco < cumulative_sum[x] || y == 0) //最小の累積距離を更新, 1回目はそのまま代入
             {
                 cumulative_sum[x] = reco; //最小の累積距離を代入
                 reco_number[x] = y;       //最大の認識率の値を更新
             }
         }
+
+        if (x == reco_number[x])
+        { //合ってたら正答数を増やす
+            reco_count++;
+            std::cout << "O: "; //〇を出力
+        }
+        else
+        {
+            std::cout << "X: "; //間違っていたら×を出力
+        }
+
         //結果を出力
         std::cout << "resutl of " + input_word[x] + ": " << temp_word[reco_number[x]] << ", Cumulative distance: " << cumulative_sum[x] << std::endl;
-
-        if (x == reco_number[x]) //合ってたら正答数を増やす
-            reco_count++;
     }
     std::cout << "Recognition rate: " << reco_count << "%" << std::endl;
     return 0;
