@@ -12,29 +12,12 @@ if (DEBUG)
 #include <math.h>
 
 using namespace std;
-/*
-string temp[i].filename0];  //テンプレートのファイル名[データ番号]
-string input[10.filename0]; //入力データのファイル名語[データ番号]
-
-string temp[10.word0];  //テンプレートの語[データ番号]
-string input[10.word0]; //入力データの語[データ番号]
-
-int temp[10.frame0] = {0};  //テンプレートのフレーム数[データ番号]
-int input[10.frame0] = {0}; //入力データのフレーム数[データ番号]
-
-const int max_frames = 140;
-
-double temp_data[max_frames][15][100] = {0.0};  //テンプレートを格納する配列[フレーム][次元][データ番号]
-double input_data[max_frames][15][100] = {0.0}; //入力データを格納する配列[フレーム][次元][データ番号]
-*/
 
 vector<vector<double>> cumulative_dist(10, vector<double>(10)); //DPマッチングの累積距離を格納する
 
-//vector<int> cumulative_sum(100,0); //認識率[入力データ番号]
-double cumulative_sum[100] = {0};
+double cumulative_min[100] = {0}; //最小の累積距離を格納
 
-//vector<int> reco_number(100,0); //一致したテンプレートの番号を格納
-int reco_number[100] = {0};
+int reco_number[100] = {0}; //一致したテンプレートの番号を格納
 
 int reco_count = 0; //正答回数を格納
 
@@ -174,9 +157,9 @@ int main()
             double reco;
             reco = cumulative_dist[temp[y].frame - 1][input[x].frame - 1] / double(input[x].frame + temp[y].frame);
 
-            if (reco < cumulative_sum[x] || y == 0) //最小の累積距離を更新, 1回目はそのまま代入
+            if (reco < cumulative_min[x] || y == 0) //最小の累積距離を更新, 1回目はそのまま代入
             {
-                cumulative_sum[x] = reco; //最小の累積距離を代入
+                cumulative_min[x] = reco; //最小の累積距離を代入
                 reco_number[x] = y;       //最大の認識率の値を更新
             }
         }
@@ -192,7 +175,7 @@ int main()
         }
 
         //結果を出力
-        cout << "resutl of " + input[x].word + ": " << temp[reco_number[x]].word << ", Cumulative distance: " << cumulative_sum[x] << endl;
+        cout << "resutl of " + input[x].word + ": " << temp[reco_number[x]].word << ", Cumulative distance: " << cumulative_min[x] << endl;
     }
     cout << "Recognition rate: " << reco_count << "%" << endl;
     return 0;
