@@ -85,7 +85,7 @@ int main()
         dir = char(((i + 1) / 100) + '0');              //100の位
         dir += char((((i + 1) % 100) / 10) + '0');      //10の位
         dir += char((((i + 1) % 100) % 10) + '0');      //1の位
-        dir = "./data/city021/city021_" + dir + ".txt"; //ディレクトリを代入
+        dir = "./data/city012/city012_" + dir + ".txt"; //ディレクトリを代入
 
         ifstream input_file(dir);
 
