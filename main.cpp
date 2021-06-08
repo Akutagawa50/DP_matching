@@ -13,6 +13,13 @@ if (DEBUG)
 
 using namespace std;
 
+string temp_file_dir = "city011";
+string input_file_dir = "city022";
+
+double dia_weight=2.0;
+//double dia_weight=1.41421356;
+//double dia_weight = 1.0;
+
 vector<vector<double>> cumulative_dist(10, vector<double>(10)); //DPマッチングの累積距離を格納する
 
 double cumulative_min[100] = {0}; //最小の累積距離を格納
@@ -48,10 +55,10 @@ int main()
     {
         string dir; //番号をcahr型で格納
 
-        dir = char(((i + 1) / 100) + '0');              //100の位
-        dir += char((((i + 1) % 100) / 10) + '0');      //10の位
-        dir += char((((i + 1) % 100) % 10) + '0');      //1の位
-        dir = "./data/city011/city011_" + dir + ".txt"; //ディレクトリを代入
+        dir = char(((i + 1) / 100) + '0');                                          //100の位
+        dir += char((((i + 1) % 100) / 10) + '0');                                  //10の位
+        dir += char((((i + 1) % 100) % 10) + '0');                                  //1の位
+        dir = "./data/" + temp_file_dir + "/" + temp_file_dir + "_" + dir + ".txt"; //ディレクトリを代入
 
         ifstream temp_file(dir);
 
@@ -82,10 +89,10 @@ int main()
     {
         string dir; //番号をcahr型で格納
 
-        dir = char(((i + 1) / 100) + '0');              //100の位
-        dir += char((((i + 1) % 100) / 10) + '0');      //10の位
-        dir += char((((i + 1) % 100) % 10) + '0');      //1の位
-        dir = "./data/city012/city012_" + dir + ".txt"; //ディレクトリを代入
+        dir = char(((i + 1) / 100) + '0');                                                  //100の位
+        dir += char((((i + 1) % 100) / 10) + '0');                                          //10の位
+        dir += char((((i + 1) % 100) % 10) + '0');                                          //1の位
+        dir = dir = "./data/" + input_file_dir + "/" + input_file_dir + "_" + dir + ".txt"; //ディレクトリを代入
 
         ifstream input_file(dir);
 
@@ -145,9 +152,9 @@ int main()
                     else
                     { //累積距離を上左斜めそれぞれ計算
                         double up, left, dia;
-                        up = cumulative_dist[i - 1][j] + local_dist;            //上方向の累積
-                        left = cumulative_dist[i][j - 1] + local_dist;          //左方向の累積
-                        dia = cumulative_dist[i - 1][j - 1] + 2.0 * local_dist; //斜め方向の累積
+                        up = cumulative_dist[i - 1][j] + local_dist;                   //上方向の累積
+                        left = cumulative_dist[i][j - 1] + local_dist;                 //左方向の累積
+                        dia = cumulative_dist[i - 1][j - 1] + dia_weight * local_dist; //斜め方向の累積
 
                         cumulative_dist[i][j] = min({up, left, dia}); //最小値を累積距離に代入
                     }
