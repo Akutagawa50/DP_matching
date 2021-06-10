@@ -1,0 +1,2 @@
+X: resutl of SOSHIGAYA: ZOOSHIGAYA, Cumulative distance: 0.544186
+Recognition rate: 99%

@@ -1,0 +1,2 @@
+X: resutl of TOOKYOO: BOOSOO, Cumulative distance: 0.603361
+Recognition rate: 99%

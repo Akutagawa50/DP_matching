@@ -1,0 +1,15 @@
+X: resutl of SUGAMO: UENO, Cumulative distance: 0.792047
+X: resutl of TENRYUU: SENJU, Cumulative distance: 0.659845
+X: resutl of RAUSU: DATE, Cumulative distance: 0.803339
+X: resutl of REBUN: BIZEN, Cumulative distance: 0.715833
+X: resutl of WASEDA: DATE, Cumulative distance: 0.827005
+X: resutl of GUNMA: KESENNUMA, Cumulative distance: 0.763895
+X: resutl of JIYUUGAOKA: CHIYODA, Cumulative distance: 0.67531
+X: resutl of ZOOSHIGAYA: SOSHIGAYA, Cumulative distance: 0.788955
+X: resutl of DENENCHOOFU: BEPPU, Cumulative distance: 0.742369
+X: resutl of PINPON: BEPPU, Cumulative distance: 0.769464
+X: resutl of PURIZUMU: BIZEN, Cumulative distance: 0.780838
+X: resutl of MYAKUHAKU: RYAKUZU, Cumulative distance: 0.816964
+X: resutl of GYUUBA: PYUUMA, Cumulative distance: 0.655652
+X: resutl of JUUMONJI: KICHIJOOJI, Cumulative distance: 0.698292
+Recognition rate: 86%

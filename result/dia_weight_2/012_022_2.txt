@@ -1,0 +1,7 @@
+X: resutl of KUNITACHI: MARUNOUCHI, Cumulative distance: 0.781197
+X: resutl of GINZA: SHINAGAWA, Cumulative distance: 0.798335
+X: resutl of ZUSHI: RISHIRI, Cumulative distance: 0.750405
+X: resutl of NYUUZEN: BIZEN, Cumulative distance: 0.743852
+X: resutl of RYAKUZU: BEPPU, Cumulative distance: 0.787209
+X: resutl of PYUUMA: GYUUBA, Cumulative distance: 0.655652
+Recognition rate: 94%

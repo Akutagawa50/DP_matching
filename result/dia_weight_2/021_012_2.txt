@@ -1,0 +1,9 @@
+X: resutl of NERIMA: HIBIYA, Cumulative distance: 0.745832
+X: resutl of REBUN: BIZEN, Cumulative distance: 0.712921
+X: resutl of GUNMA: SHINAGAWA, Cumulative distance: 0.860888
+X: resutl of ZOOSHIGAYA: SOSHIGAYA, Cumulative distance: 0.713222
+X: resutl of PINPON: BEPPU, Cumulative distance: 0.807594
+X: resutl of GYUUBA: CHIYODA, Cumulative distance: 0.724684
+X: resutl of GYOODA: CHIYODA, Cumulative distance: 0.713345
+X: resutl of JUUMONJI: KICHIJOOJI, Cumulative distance: 0.754946
+Recognition rate: 92%

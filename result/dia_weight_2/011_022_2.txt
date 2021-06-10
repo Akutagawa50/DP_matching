@@ -1,0 +1,15 @@
+X: resutl of KUNITACHI: MARUNOUCHI, Cumulative distance: 0.743128
+X: resutl of SUGAMO: HYOOGO, Cumulative distance: 0.782319
+X: resutl of SOSHIGAYA: ZOOSHIGAYA, Cumulative distance: 0.725055
+X: resutl of HONJO: MEJIRO, Cumulative distance: 0.710434
+X: resutl of YAESU: BEPPU, Cumulative distance: 0.721669
+X: resutl of GINZA: SHINAGAWA, Cumulative distance: 0.712492
+X: resutl of BAKUROCHOO: TOOKYOO, Cumulative distance: 0.69992
+X: resutl of BUNKYOO: TOOKYOO, Cumulative distance: 0.657275
+X: resutl of BOOSOO: TOOKYOO, Cumulative distance: 0.683575
+X: resutl of CHANPION: TENRYUU, Cumulative distance: 0.782384
+X: resutl of NYORAI: KOGANEI, Cumulative distance: 0.734371
+X: resutl of JUUMONJI: RUMOI, Cumulative distance: 0.690229
+X: resutl of BYOOIN: RUMOI, Cumulative distance: 0.720408
+X: resutl of PYUUMA: GYUUBA, Cumulative distance: 0.627795
+Recognition rate: 86%

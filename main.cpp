@@ -13,11 +13,13 @@ if (DEBUG)
 
 using namespace std;
 
+//読み込むファイル
 string temp_file_dir = "city011";
 string input_file_dir = "city022";
 
-double dia_weight=2.0;
-//double dia_weight=1.41421356;
+//斜め遷移の重み
+const double dia_weight = 2.0;
+//double dia_weight = 1.41421356;
 //double dia_weight = 1.0;
 
 vector<vector<double>> cumulative_dist(10, vector<double>(10)); //DPマッチングの累積距離を格納する
@@ -47,9 +49,6 @@ vector<data_info> input(100);
 
 int main()
 {
-    if (DEBUG)
-        cout << "main" << endl;
-
     //テンプレートのデータ入力, city011
     for (int i = 0; i < 100; i++)
     {
@@ -61,9 +60,6 @@ int main()
         dir = "./data/" + temp_file_dir + "/" + temp_file_dir + "_" + dir + ".txt"; //ディレクトリを代入
 
         ifstream temp_file(dir);
-
-        if (DEBUG)
-            cout << "read template file " << i << " times" << endl;
 
         if (temp_file.fail()) //ファイル読み込みに失敗
         {
@@ -96,9 +92,6 @@ int main()
 
         ifstream input_file(dir);
 
-        if (DEBUG)
-            cout << "read input file " << i << " times" << endl;
-
         if (input_file.fail()) //ファイル読み込みに失敗
         {
             cerr << "Failed to open file." << endl;
@@ -125,21 +118,22 @@ int main()
     for (int x = 0; x < 100; x++)
     { //入力データのfor
         for (int y = 0; y < 100; y++)
-        {                                                                             //テンプレートのfor
-            cumulative_dist.assign(temp[y].frame, vector<double>(input[x].frame, 0)); //2次元配列を動的確保, tempフレーム行 X inputフレーム列
+        {                                                                                //テンプレートのfor
+            cumulative_dist.assign(temp[y].frame, vector<double>(input[x].frame, 10.0)); //2次元配列を動的確保, tempフレーム行 X inputフレーム列
             for (int i = 0; i < temp[y].frame; i++)
             { //累積距離を計算
 
                 for (int j = 0; j < input[x].frame; j++)
                 {
                     double sum = 0.0;
-
+                
                     //次元の差の2乗和を合計を格納
                     for (int k = 0; k < 15; k++) //次元の差の2乗和を合計する
                         sum += pow((temp[y].data[i][k] - input[x].data[j][k]), 2.0);
 
                     double local_dist = sqrt(sum);
 
+                
                     if (i == 0 && j == 0) //最初はそのまま代入
                         cumulative_dist[0][0] = local_dist;
 
@@ -174,15 +168,14 @@ int main()
         if (x == reco_number[x])
         { //合ってたら正答数を増やす
             reco_count++;
-            cout << "O: "; //〇を出力
+            //cout << "O: "; //〇を出力
         }
         else
         {
             cout << "X: "; //間違っていたら×を出力
+            //結果を出力
+            cout << "resutl of " + input[x].word + ": " << temp[reco_number[x]].word << ", Cumulative distance: " << cumulative_min[x] << endl;
         }
-
-        //結果を出力
-        cout << "resutl of " + input[x].word + ": " << temp[reco_number[x]].word << ", Cumulative distance: " << cumulative_min[x] << endl;
     }
     cout << "Recognition rate: " << reco_count << "%" << endl;
     return 0;

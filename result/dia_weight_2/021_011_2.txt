@@ -1,0 +1,11 @@
+X: resutl of SUGAMO: UENO, Cumulative distance: 0.767181
+X: resutl of NERIMA: HIBIYA, Cumulative distance: 0.730675
+X: resutl of RAUSU: MYAKUHAKU, Cumulative distance: 0.847
+X: resutl of GUNMA: NERIMA, Cumulative distance: 0.786625
+X: resutl of ZOOSHIGAYA: SOSHIGAYA, Cumulative distance: 0.679525
+X: resutl of BAKUROCHOO: BOOSOO, Cumulative distance: 0.825887
+X: resutl of MYAKUHAKU: BEPPU, Cumulative distance: 0.818054
+X: resutl of GYOODA: CHIYODA, Cumulative distance: 0.75886
+X: resutl of JUUMONJI: KICHIJOOJI, Cumulative distance: 0.76512
+X: resutl of JOOETSU: YAESU, Cumulative distance: 0.872589
+Recognition rate: 90%

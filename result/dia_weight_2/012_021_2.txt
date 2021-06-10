@@ -1,0 +1,10 @@
+X: resutl of SOSHIGAYA: ZOOSHIGAYA, Cumulative distance: 0.713222
+X: resutl of NOGATA: POPURA, Cumulative distance: 0.811258
+X: resutl of YAESU: BEPPU, Cumulative distance: 0.715439
+X: resutl of GINZA: EDOGAWA, Cumulative distance: 0.831316
+X: resutl of ZUSHI: RISHIRI, Cumulative distance: 0.741318
+X: resutl of GYOODA: HYUUGA, Cumulative distance: 0.755401
+X: resutl of JARI: SHUZENJI, Cumulative distance: 0.752492
+X: resutl of JOOETSU: RYOOGOKU, Cumulative distance: 0.761256
+X: resutl of PYUUMA: HYUUGA, Cumulative distance: 0.762148
+Recognition rate: 91%

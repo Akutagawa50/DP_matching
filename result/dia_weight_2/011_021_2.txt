@@ -1,0 +1,18 @@
+X: resutl of KUNITACHI: MARUNOUCHI, Cumulative distance: 0.827332
+X: resutl of SENJU: TENRYUU, Cumulative distance: 0.660441
+X: resutl of SOSHIGAYA: ZOOSHIGAYA, Cumulative distance: 0.679525
+X: resutl of ROPPONGI: DOOTONBORI, Cumulative distance: 0.788364
+X: resutl of WASEDA: YOTSUYA, Cumulative distance: 0.783269
+X: resutl of GINZA: SHINAGAWA, Cumulative distance: 0.767018
+X: resutl of BAKUROCHOO: TOOKYOO, Cumulative distance: 0.753641
+X: resutl of BUNKYOO: TOOKYOO, Cumulative distance: 0.777004
+X: resutl of BOOSOO: TOOKYOO, Cumulative distance: 0.708392
+X: resutl of CHANPION: TENRYUU, Cumulative distance: 0.767924
+X: resutl of NYORAI: RUMOI, Cumulative distance: 0.724596
+X: resutl of GYOODA: EDOGAWA, Cumulative distance: 0.751927
+X: resutl of JARI: RUMOI, Cumulative distance: 0.759432
+X: resutl of JOOETSU: YAESU, Cumulative distance: 0.82342
+X: resutl of BYOOIN: RUMOI, Cumulative distance: 0.814107
+X: resutl of HAPPYAKU: HARAJUKU, Cumulative distance: 0.790192
+X: resutl of PYUUMA: GUNMA, Cumulative distance: 0.797872
+Recognition rate: 83%
