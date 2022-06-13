@@ -1,9 +1,3 @@
-#define DEBUG 0
-/*-------------*\
-if (DEBUG)
-    cout << "debug" << endl;
-\--------------*/
-
 #include <fstream>
 #include <iostream>
 #include <string>
@@ -107,8 +101,7 @@ int main()
         {
             for (int k = 0; k < 15; k++)
             {
-                input_file >> input[i].data[j][k];
-                ; //データを入力
+                input_file >> input[i].data[j][k];  //データを入力
             }
         }
         input_file.close(); //ファイルを閉じる
